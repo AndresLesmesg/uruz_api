@@ -18,7 +18,7 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db, render_as_batch=True)
     # endpoints list
-    from app.routine.paths import ExercisesAll, ExerciseById, ExerciseByName
+    from app.routine.views.exercises import ExercisesAll, ExerciseById, ExerciseByName
     api.add_resource(ExercisesAll, '/exercises/')
     api.add_resource(ExerciseById, '/exercises/<int:id>')
     api.add_resource(ExerciseByName, '/exercises/<string:name>')
